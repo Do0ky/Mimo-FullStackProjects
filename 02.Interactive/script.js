@@ -1,10 +1,20 @@
-const inputValue = 10;
-const milesToKm = false;
+const convert = () => {
+  const inputValue = document.getElementById("userInput").value;
+  const unit = document.getElementById("unit").value;
 
-let result = 0;
+  const milesToKm = unit === "milesToKm";
 
-if (milesToKm === true) { result = inputValue * 1.60934; } 
-else { result = inputValue / 1.60934; }
+  let result = 0;
 
-const resultString = inputValue + " miles are " + result + " km";
-console.log(resultString);
+  if (milesToKm === true) {
+  result = inputValue * 1.60934;
+  } else {
+  result = inputValue / 1.60934;
+  }
+
+  const resultString = inputValue + " miles are " + result + " km";
+  console.log(resultString);
+
+  const resultElement = document.getElementById('resultElement');
+  resultElement.innerHTML = resultString;
+}
